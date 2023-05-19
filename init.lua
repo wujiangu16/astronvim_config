@@ -57,6 +57,11 @@ return {
         settings = {
           python = {
             analysis = {
+              -- set include paths for intellisense
+              extraPaths = {
+                vim.fn.getcwd(),
+              },
+              workingDirectory = vim.fn.getcwd(),
               typeCheckingMode = "off",
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,

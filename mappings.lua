@@ -31,6 +31,8 @@ return {
     ["<C-f>"] = { "10jzz", desc = "Page down" },
     ["<C-b>"] = { "10kzz", desc = "Page up" },
     ["<leader>td"] = { "<cmd>TodoTelescope<cr>", desc = "TodoTelescope" },
+    ["<leader>a"] = { "ggVG", desc = "select all" },
+    ["<leader>f'"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Telescope vim_bookmarks all" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -41,5 +43,9 @@ return {
   i = {
     -- ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save File" },
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "ToggleTerm" },
+  },
+  v = {
+    ["<C-f>"] = { "10jzz", desc = "Page down" },
+    ["<C-b>"] = { "10kzz", desc = "Page up" },
   },
 }

@@ -5,7 +5,7 @@
       "#!/usr/bin/env python",
       "# -*- encoding: utf-8 -*-",
       "# @file ${TM_FILENAME}",
-      "# @author: ${VIM:\\$USER}",
+      "# @author: wujiangu",
       "# @date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}",
       "# @description: ${1}"
     ]
@@ -18,9 +18,9 @@
     "prefix": ["log"],
     "body": [
       "# WARNING: log remember to delete",
-      "print('='*50)",
-      "print(' '*8+f'${1}')",
-      "print('='*50)"
+      "print('=' * 50)",
+      "print(' ' * 8 + f'${1}')",
+      "print('=' * 50)"
     ]
   }
 }

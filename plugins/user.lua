@@ -24,10 +24,16 @@ return {
     end,
   },
   {
-    "hrsh7th/vim-vsnip",
-    event = "BufRead",
+    "MattesGroeger/vim-bookmarks",
+    event = "UIEnter",
+    -- cmd = "Telescope vim_bookmarks all",
   },
   {
-    "hrsh7th/cmp-vsnip",
+    "tom-anders/telescope-vim-bookmarks.nvim",
+    config = function() require("telescope").load_extension "vim_bookmarks" end,
+  },
+  {
+    "mg979/vim-visual-multi",
+    event = "BufRead",
   },
 }
