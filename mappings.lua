@@ -33,6 +33,9 @@ return {
     ["<leader>td"] = { "<cmd>TodoTelescope<cr>", desc = "TodoTelescope" },
     ["<leader>a"] = { "ggVG", desc = "select all" },
     ["<leader>f'"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Telescope vim_bookmarks all" },
+    ["<leader>rs"] = { ":lua  Sync_local_to_remote()<cr>", desc = "Sync_local_to_remote" },
+    ["<leader>rd"] = { ":lua  Diff_local_remote()<cr>", desc = "Diff_local_remote" },
+    ["<leader>rm"] = { ":lua  Sync_remote_to_local()<cr>", desc = "Sync_remote_to_local" },
   },
   t = {
     -- setting a mapping to false will disable it
