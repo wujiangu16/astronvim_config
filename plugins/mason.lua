@@ -10,7 +10,6 @@ return {
       require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
       })
-      -- set pyright to use library code for types
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

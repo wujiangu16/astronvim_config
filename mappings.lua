@@ -20,22 +20,28 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- ["<leader>b1"] = { ":BufferLineGoToBuffer 1<CR>", desc = "goto Buf 1" },
-    -- ["<leader>b2"] = { ":BufferLineGoToBuffer 2<CR>", desc = "goto Buf 2" },
-    -- ["<leader>b3"] = { ":BufferLineGoToBuffer 3<CR>", desc = "goto Buf 3" },
-    -- ["<leader>b4"] = { ":BufferLineGoToBuffer 4<CR>", desc = "goto Buf 4" },
-    -- ["<leader>b5"] = { ":BufferLineGoToBuffer 5<CR>", desc = "goto Buf 5" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "ToggleTerm" },
     ["<C-f>"] = { "10jzz", desc = "Page down" },
     ["<C-b>"] = { "10kzz", desc = "Page up" },
     ["<leader>td"] = { "<cmd>TodoTelescope<cr>", desc = "TodoTelescope" },
     ["<leader>a"] = { "ggVG", desc = "select all" },
     ["<leader>f'"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Telescope vim_bookmarks all" },
-    ["<leader>rs"] = { ":lua  Sync_local_to_remote()<cr>", desc = "Sync_local_to_remote" },
-    ["<leader>rd"] = { ":lua  Diff_local_remote()<cr>", desc = "Diff_local_remote" },
-    ["<leader>rm"] = { ":lua  Sync_remote_to_local()<cr>", desc = "Sync_remote_to_local" },
+    -- sync
+    ["<leader>r"] = { name = "sync folder or buffer" },
+    ["<leader>rb"] = { name = "sync buffer" },
+    ["<leader>rd"] = { name = "sync floder with delete" },
+    ["<leader>rt"] = { name = "test sync floder" },
+    ["<leader>rtd"] = { name = "test sync floder with delete" },
+    ["<leader>rs"] = { ":lua  Sync_local_to_remote('')<cr>", desc = "Sync_local_to_remote" },
+    ["<leader>rm"] = { ":lua  Sync_remote_to_local('')<cr>", desc = "Sync_remote_to_local" },
+    ["<leader>rbs"] = { ":lua Sync_buffer_local_to_remote('')<cr>", desc = "Sync_buffer_local_to_remote" },
+    ["<leader>rbm"] = { ":lua  Sync_buffer_remote_to_local('')<cr>", desc = "Sync_buffer_remote_to_local" },
+    ["<leader>rds"] = { ":lua  Sync_local_to_remote(' --delete ')<cr>", desc = "Sync_local_to_remote(delete)" },
+    ["<leader>rdm"] = { ":lua Sync_remote_to_local( ' --delete ')<cr>", desc = "Sync_remote_to_local(delete)" },
+    ["<leader>rts"] = { ":lua  Sync_local_to_remote(' -n ')<cr>", desc = "Diff_local_to_remote" },
+    ["<leader>rtm"] = { ":lua Sync_remote_to_local( ' -n ')<cr>", desc = "Diff_remote_to_local" },
+    ["<leader>rtds"] = { ":lua  Sync_local_to_remote(' -n --delete ')<cr>", desc = "Diff_local_to_remote(delete)" },
+    ["<leader>rtdm"] = { ":lua Sync_remote_to_local( ' -n --delete ')<cr>", desc = "Sync_remote_to_local(delete)" },
   },
   t = {
     -- setting a mapping to false will disable it
