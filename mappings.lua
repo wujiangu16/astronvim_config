@@ -19,12 +19,16 @@ return {
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
+    -- H --> ^ L --> $
+    ["H"] = { "^" },
+    ["L"] = { "$" },
     ["<leader>b"] = { name = "Buffers" },
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "ToggleTerm" },
     ["<C-f>"] = { "10jzz", desc = "Page down" },
     ["<C-b>"] = { "10kzz", desc = "Page up" },
     ["<leader>td"] = { "<cmd>TodoTelescope<cr>", desc = "TodoTelescope" },
     ["<leader>a"] = { "ggVG", desc = "select all" },
+    ["<leader>y"] = { ":%y+<cr>", desc = "yank all" },
     ["<leader>f'"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Telescope vim_bookmarks all" },
     -- sync
     ["<leader>r"] = { name = "sync folder or buffer" },

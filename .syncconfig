@@ -1,2 +1,5 @@
-wujiangu@192.168.1.160:/home/wujiangu/git_code/test
-exclude '.*' test.py
+name: 4080
+remote: wujiangu@192.168.1.160:/home/wujiangu/git_code/test/
+
+exclude: '.*' test.py
+
