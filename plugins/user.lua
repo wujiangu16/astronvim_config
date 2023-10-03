@@ -36,4 +36,14 @@ return {
     "mg979/vim-visual-multi",
     event = "BufRead",
   },
+  {
+    "ggandor/leap.nvim",
+    event = "UIEnter",
+    config = function() require("leap").add_default_mappings() end,
+  },
+  {
+    "ggandor/flit.nvim",
+    event = "UIEnter",
+    config = function() require("flit").setup() end,
+  },
 }

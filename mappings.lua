@@ -37,6 +37,7 @@ return {
     ["<leader>rt"] = { name = "test sync floder" },
     ["<leader>rtd"] = { name = "test sync floder with delete" },
     ["<leader>rs"] = { ":lua  Sync_local_to_remote('')<cr>", desc = "Sync_local_to_remote" },
+    ["<C-t>"] = { ":lua  Sync_local_to_remote('')<cr>", desc = "Sync_local_to_remote" },
     ["<leader>rm"] = { ":lua  Sync_remote_to_local('')<cr>", desc = "Sync_remote_to_local" },
     ["<leader>rbs"] = { ":lua Sync_buffer_local_to_remote('')<cr>", desc = "Sync_buffer_local_to_remote" },
     ["<leader>rbm"] = { ":lua  Sync_buffer_remote_to_local('')<cr>", desc = "Sync_buffer_remote_to_local" },
