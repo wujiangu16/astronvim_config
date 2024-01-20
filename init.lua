@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "tokyonight-moon",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -38,6 +38,8 @@ return {
               -- set include paths for intellisense
               extraPaths = {
                 vim.fn.getcwd(),
+                -- all dir
+                vim.fn.getcwd() .. "/**",
               },
               workingDirectory = vim.fn.getcwd(),
               typeCheckingMode = "off",

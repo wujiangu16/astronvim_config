@@ -46,4 +46,7 @@ return {
     event = "UIEnter",
     config = function() require("flit").setup() end,
   },
+  {
+    "folke/tokyonight.nvim",
+  },
 }

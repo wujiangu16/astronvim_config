@@ -22,6 +22,9 @@ return {
     -- H --> ^ L --> $
     ["H"] = { "^" },
     ["L"] = { "$" },
+    ["<leader>R"] = { name = "Reload prefix" },
+    ["<leader>RR"] = { ":luafile ~/.config/nvim/init.lua<cr>", desc = "Reload nvim config" },
+    ["<leader>RF"] = { ":bufdo :e!<cr>", desc = "Reload buffer" },
     ["<leader>b"] = { name = "Buffers" },
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "ToggleTerm" },
     ["<C-f>"] = { "10jzz", desc = "Page down" },
@@ -47,6 +50,10 @@ return {
     ["<leader>rtm"] = { ":lua Sync_remote_to_local( ' -n ')<cr>", desc = "Diff_remote_to_local" },
     ["<leader>rtds"] = { ":lua  Sync_local_to_remote(' -n --delete ')<cr>", desc = "Diff_local_to_remote(delete)" },
     ["<leader>rtdm"] = { ":lua Sync_remote_to_local( ' -n --delete ')<cr>", desc = "Sync_remote_to_local(delete)" },
+    -- <leader>gn git next hunk
+    -- <leader>gp git prev hunk
+    ["<leader>gn"] = { ":Gitsigns next_hunk<cr>", desc = "git next hunk" },
+    ["<leader>gp"] = { ":Gitsigns prev_hunk<cr>", desc = "git prev hunk" },
   },
   t = {
     -- setting a mapping to false will disable it

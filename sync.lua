@@ -85,7 +85,8 @@ function Sync_local_to_remote(arg)
   local _, _, last_dir = string.find(root_dir, "([^/]+)$")
   last_dir = last_dir ~= nil and last_dir or ""
   local remote_dir = selected_config.remote_dir
-  local exclude = '--exclude ".*" '
+  local exclude = "--exclude='.*' --exclude='*.swp' --exclude='*.swo' --exclude='*.swx' --exclude='*__pycache__'"
+  -- 设置无响应时间为 3s
   local command = "rsync -av "
     .. arg
     .. exclude
@@ -96,9 +97,10 @@ function Sync_local_to_remote(arg)
     .. remote_dir
     .. last_dir
     .. "/"
+    .. " --timeout=3"
 
   print(command)
-  --
+
   -- -- 使用 ~/.config/nvim/lua/user/sync.sh 脚本 参数 1 为 password 参数 2 为 command
   command = "~/.config/nvim/lua/user/sync.sh " .. selected_config.password .. " " .. "'" .. command .. "'"
   -- print(command)
@@ -142,8 +144,18 @@ function Sync_remote_to_local(arg)
   local _, _, last_dir = string.find(root_dir, "([^/]+)$")
   last_dir = last_dir ~= nil and last_dir or ""
   local remote_dir = selected_config.remote_dir
-  local exclude = '--exclude ".*" '
-  local command = "rsync -av " .. arg .. exclude .. " " .. remote_dir .. last_dir .. "/ " .. " " .. parent_dir .. "/"
+  local exclude = "--exclude='.*' --exclude='*.swp' --exclude='*.swo' --exclude='*.swx' --exclude='*__pycache__'"
+  local command = "rsync -av "
+    .. arg
+    .. exclude
+    .. " "
+    .. remote_dir
+    .. last_dir
+    .. "/ "
+    .. " "
+    .. parent_dir
+    .. "/"
+    .. " --timeout=3"
 
   -- 使用 ~/.config/nvim/lua/user/sync.sh 脚本 参数 1 为 password 参数 2 为 command
   command = "~/.config/nvim/lua/user/sync.sh " .. selected_config.password .. " " .. "'" .. command .. "'"
@@ -193,7 +205,15 @@ function Sync_buffer_local_to_remote(arg)
   end
 
   local remote_dir = selected_config.remote_dir
-  local command = "rsync -av " .. arg .. " " .. buffer_path .. " " .. remote_dir .. last_dir .. relative_path
+  local command = "rsync -av "
+    .. arg
+    .. " "
+    .. buffer_path
+    .. " "
+    .. remote_dir
+    .. last_dir
+    .. relative_path
+    .. " --timeout=3"
 
   -- 使用 ~/.config/nvim/lua/user/sync.sh 脚本 参数 1 为 password 参数 2 为 command
   command = "~/.config/nvim/lua/user/sync.sh " .. selected_config.password .. " " .. "'" .. command .. "'"
@@ -242,7 +262,15 @@ function Sync_buffer_remote_to_local(arg)
 
   local remote_dir = selected_config.remote_dir
 
-  local command = "rsync -av " .. arg .. " " .. remote_dir .. last_dir .. relative_path .. " " .. buffer_path
+  local command = "rsync -av "
+    .. arg
+    .. " "
+    .. remote_dir
+    .. last_dir
+    .. relative_path
+    .. " "
+    .. buffer_path
+    .. " --timeout=3"
   command = "~/.config/nvim/lua/user/sync.sh " .. selected_config.password .. " " .. "'" .. command .. "'"
   vim.cmd("echo 'Syncing file " .. remote_dir .. last_dir .. relative_path .. " to " .. buffer_path .. "...'")
   local res = executeCommand(command)

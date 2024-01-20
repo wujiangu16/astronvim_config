@@ -13,11 +13,11 @@ return {
       suggestion = {
         keymap = {
           accept = "<C-l>",
+          dismiss = "<C-L>",
           accept_word = false,
           accept_line = false,
           next = "<C-.>",
           prev = "<C-,>",
-          dismiss = "<C/>",
         },
       },
     },
