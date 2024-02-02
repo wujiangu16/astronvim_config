@@ -12,8 +12,13 @@ if [ "$password" = "No" ]
   else
     expect <<END
     spawn $command
-    expect "password:"
-    send "$password\r"
+    # expect "password:"
+    expect {
+            "(yes/no"
+            {send "yes\n";exp_continue;}
+	          -re "(p|P)ass(word|wd):"
+            {send "$password\n"}
+    }
     expect eof
 END
 fi

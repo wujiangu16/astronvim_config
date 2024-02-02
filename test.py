@@ -4,7 +4,6 @@ from astropy.io import fits
 
 torch.manual_seed(0)
 
-
 y = np.linspace(0, 1, 10)
 x = [1, 2]
 np = 1
