@@ -20,10 +20,10 @@ return {
   },
 
   -- Set colorscheme to use
-  -- colorscheme = "tokyonight-moon",
+  colorscheme = "tokyonight-moon",
   -- colorscheme = "github_dark",
   -- colorscheme = "onedarkpro",
-  colorscheme = "nordic",
+  -- colorscheme = "nordic",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -123,15 +123,20 @@ return {
     Git = "",
     GitAdd = "",
     GitBranch = "",
-    GitChange = "",
+    -- GitChange = "",
+    GitChange = "󰯱",
     GitConflict = "",
     GitDelete = "",
     -- GitIgnored = "◌",
     GitIgnored = "",
-    GitRenamed = "➜",
-    GitStaged = "✓",
+    -- GitRenamed = "➜",
+    GitRenamed = "󰧛",
+    -- GitStaged = "✓",
+    GitStaged = "󰰡",
     -- GitStaged = "",
-    GitUnstaged = "✗",
+    -- GitUnstaged = "✗",
+    -- GitUnstaged = "󰰰",
+    GitUnstaged = "󰅘",
     -- GitUntracked = "★",
     GitUntracked = "",
     LSPLoaded = "",

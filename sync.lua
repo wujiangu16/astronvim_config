@@ -7,7 +7,10 @@ local function executeCommand(command)
 end
 
 local function read_config_file()
-  if vim.fn.filereadable ".syncconfig" == 0 then
+  local path_str = "~/.config/sync/.config"
+  path_str = vim.fn.expand(path_str)
+  path_str = tostring(path_str)
+  if vim.fn.filereadable(path_str) == 0 then
     print "No configuration file found."
     return {}
   end
@@ -15,7 +18,7 @@ local function read_config_file()
   local current_config = {}
   local line_num = 1
 
-  for line in io.lines ".syncconfig" do
+  for line in io.lines(path_str) do
     if line ~= "" then
       if line_num == 1 then
         local parts = vim.split(line, ":")
